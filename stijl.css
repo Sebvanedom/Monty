@@ -1,0 +1,91 @@
+html{
+  font-size: 62.5%;
+  font-family: 'Fondamento', cursive;
+}
+
+body {
+  background-image: url("parch.jpg");
+}
+
+.container {
+  width: 70vw;
+  margin: 5vh 15vw auto 15vw;
+  display: grid;
+         grid-template-columns: 40% 40% 20%;
+         grid-template-rows: auto;
+         grid-template-areas:
+                  "a a a"
+                  "f f ."
+                  "e b ."
+                  "c d .";
+         grid-gap: 10vh;
+}
+
+p{
+  font-size: 1.5rem;
+}
+
+h2{
+  font-size: 3rem;
+}
+
+.welcome {
+  grid-area: a;
+ justify-self: center;
+}
+.one{
+  grid-area: b;
+ justify-self: center;
+}
+.two{
+  grid-area: c;
+ justify-self: center;
+}
+.three{
+  grid-area: d;
+ justify-self: center;
+}
+.four{
+  grid-area: e;
+ justify-self: center;
+}
+nav{
+  grid-area: f;
+  justify-self: center;
+  font-size: 2rem;
+}
+.scroll {
+  background-image: url("scroll.gif");
+  height: 100%;
+  background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  position: fixed;
+  margin top: 50vh;
+  top: 20px;
+  right: 20px;
+
+}
+.scroll p{
+  padding-top: 50px;
+  margin: 10vh 10px 10px 10px;
+  text-align: center;
+}
+
+@supports (grid-area: auto) {
+  @media screen and (max-width: 600px) {
+            .container {
+                  grid-template-columns: 1fr;
+                  grid-template-areas:
+                           "a"
+                           "f"
+                           "e"
+                           "c"
+                           "b"
+                           "d";
+                  margin: 0 0 0 0;
+            }
+            .scroll{
+              display: none;
+            }
+}
